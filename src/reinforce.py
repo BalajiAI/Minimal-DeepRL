@@ -18,7 +18,7 @@ class Agent(nn.Module):
         return x
     
     def act(self, obs):
-        obs = torch.tensor(obs).unsqueeze(0)
+        obs = torch.tensor(obs)
         pd_params = self.forward(obs)
         prob_dist = torch.distributions.Categorical(logits=pd_params)
         action = prob_dist.sample()
@@ -57,7 +57,7 @@ def train_agent(env, agent, optim, nb_episodes, nb_timesteps, gamma):
         loss.backward()
         optim.step()
        
-        print(f"Episode {episode} : Total rewards - {sum(rewards)}")
+        print(f"Episode {episode} : Total reward - {sum(rewards)}")
 
 if __name__ == "__main__":
     import argparse
