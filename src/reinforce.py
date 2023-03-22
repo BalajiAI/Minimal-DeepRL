@@ -1,4 +1,4 @@
-"""Implementation of Reinforce or Vanilla Policy gradient or Monte Carlo policy gradient"""
+"""Implementation of REINFORCE or Monte Carlo policy gradient"""
 import torch
 import torch.nn as nn
 
